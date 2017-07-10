@@ -172,8 +172,7 @@ class First_Artikel_M extends CI_Model{
 	// Ambil gambar slider besar tergantung dari settingnya.
 	function slider_gambar(){
 		$slider_gambar = array();
-		$sumber_gambar = 1;
-		switch ($sumber_gambar) {
+		switch ($this->setting->sumber_gambar_slider) {
 			case '1':
 				# 10 gambar utama semua artikel terbaru
 				$slider_gambar['gambar'] = $this->db->select('id,gambar')->where('enabled',1)->where('gambar !=','')->order_by('tgl_upload DESC')->limit(10)->get('artikel')->result_array();
