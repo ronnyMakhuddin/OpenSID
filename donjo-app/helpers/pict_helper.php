@@ -531,7 +531,7 @@ function AmbilDokumen($dokumen){
 function UploadDocument($fupload_name, $old_dokumen=""){
   $vfile_upload = LOKASI_DOKUMEN . $fupload_name;
   move_uploaded_file($_FILES["satuan"]["tmp_name"], $vfile_upload);
-  unlink($old_dokumen);
+  unlink(LOKASI_DOKUMEN . $old_dokumen);
 }
 
 function UploadDocument2($fupload_name){

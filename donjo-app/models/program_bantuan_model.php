@@ -564,6 +564,11 @@ class Program_bantuan_model extends CI_Model{
 	// $id = program_peserta.id
 	public function edit_peserta($post,$id){
 		$data = $post;
+		if($data['gambar_hapus']){
+		  unlink(LOKASI_DOKUMEN . $data['gambar_hapus']);
+			$data['kartu_peserta'] = '';
+		}
+		unset($data['gambar_hapus']);
 		$file_gambar = $this->_upload_gambar($data['old_gambar']);
 		if($file_gambar) $data['kartu_peserta'] = $file_gambar;
 		unset($data['old_gambar']);

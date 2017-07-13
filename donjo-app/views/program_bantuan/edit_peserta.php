@@ -44,6 +44,7 @@
             <div class="gallerybox-avatar">
               <img src="<?php echo AmbilDokumen($kartu_peserta)?>" alt=""/>
             </div>
+            <input type="checkbox" name="gambar_hapus" value="<?php echo $kartu_peserta?>" /><span>Hapus Gambar</span>
           <?php endif;?>
           <input type="file" name="satuan" /> <span style="color: #aaa;">(Kosongkan jika tidak ingin mengubah gambar)</span>
           <input type="hidden" name="old_gambar" value="<?php echo $kartu_peserta?>">
