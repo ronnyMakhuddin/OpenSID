@@ -555,6 +555,8 @@ class Program_bantuan_model extends CI_Model{
 				'kartu_tanggal_lahir' => tgl_indo_in($post['kartu_tanggal_lahir']),
 				'kartu_alamat' => $post['kartu_alamat']
 			);
+			$file_gambar = $this->_upload_gambar();
+			if($file_gambar) $data['kartu_peserta'] = $file_gambar;
 			return $this->db->insert('program_peserta',$data);
 		}
 	}
